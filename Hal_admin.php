@@ -114,7 +114,7 @@ $data = mysqli_fetch_array($sql_formulir);
 			<li><a href="?page=admin&action=lihat"><em class="fa fa-database" style="font-size: 23px;">&nbsp;</em> Data Pendaftar</a></li>	
 			
 			<li class="parent "><a data-toggle="collapse" href="#sub-item-3">
-				<em class="fa fa-print" style="font-size: 23px;">&nbsp;</em> Laporan <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
+				<em class="fa fa-print" style="font-size: 23px;">&nbsp;</em> Laporan <span data-toggle="collapse" href="#sub-item-3" class="icon pull-right"><em class="fa fa-plus"></em></span>
 				</a>
 				<ul class="children collapse" id="sub-item-3">
 					<li><a class="" href="?page=admin&action=all_laporan">
@@ -123,7 +123,7 @@ $data = mysqli_fetch_array($sql_formulir);
 				</ul>
 			</li>
 			<li class="parent "><a data-toggle="collapse" href="#sub-item-2">
-				<em class="fa fa-bar-chart" style="font-size: 23px;">&nbsp;</em> Grafik <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
+				<em class="fa fa-bar-chart" style="font-size: 23px;">&nbsp;</em> Grafik <span data-toggle="collapse" href="#sub-item-2" class="icon pull-right"><em class="fa fa-plus"></em></span>
 				</a>
 				<ul class="children collapse" id="sub-item-2">
 					<li><a class="" href="?page=admin&action=grafik">
