@@ -1032,3 +1032,8 @@ p.back-link {
   margin-bottom: 20px;
   font-size: 12px;
   text-transform: uppercase; }
+
+#space-row{
+  padding-bottom: 12px;
+  padding-left: 12px;
+}

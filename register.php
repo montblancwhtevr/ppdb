@@ -112,7 +112,7 @@ if ($pindah) {
     '$nama_lengkap',
     '',
     '',
-    '1981-01-01',
+    '0000-01-01',
     '0',
     '0',
     '-',
@@ -127,11 +127,25 @@ if ($pindah) {
     '0',
     '$keterangan',
     '$siswa',
-    '$nama_gambar'
+    '$nama_gambar',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    'Reguler'
   )";
   $result = mysqli_query($con,$query);
   var_dump($query);
   var_dump($result);
+  echo("Error description: " . mysqli_error($con));
    ?>
 
          <script type="text/javascript">

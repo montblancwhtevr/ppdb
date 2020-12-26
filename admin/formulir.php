@@ -87,9 +87,18 @@ $hasilkode = "S001";
 						</div>
 					</div>
 					<div class="form-group">
+						<label class="col-md-3 control-label" for="name">Kelas</label>
+						<div class="col-md-7">
+							<select name="kelas" class="form-control">
+								<option> -- Pilih Kelas -- </option>
+								<option value="Reguler">Reguler</option>
+								<option value="ICT">ICT</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
 						<label class="col-md-3 control-label" for="name">Agama</label>
 						<div class="col-md-7">
-
 							<select name="agama" class="form-control">
 								<option> -- Pilih Agama -- </option>
 								<?php 
@@ -316,22 +325,11 @@ $pekerjaan_ayah = @$_POST['pekerjaan_ayah'];
 $pekerjaan_ibu = @$_POST['pekerjaan_ibu'];
 $nama_wali = @$_POST['nama_wali'];
 $alamat_wali = @$_POST['alamat_wali'];
-$no_telp_wali = @$_POST['no_telp_wali'];
+$no_telp_wali = @$_POST['no_telpwali'];
 $pekerjaan_wali = @$_POST['pekerjaan_wali'];
 $no_telp = @$_POST['no_telepon'];
 $alamat_sekolah = @$_POST['alamat_sekolah'];
-// nama_ayah	
-// nama_ibu
-// alamat_ortu
-// no_telp_ortu	
-// pekerjaan_ayah 
-// pekerjaan_ibu 
-// nama_wali
-// alamat_wali
-// no_telp_wali 
-// pekerjaan_wali	
-// no_telp	
-// alamat_sekolah
+$kelas = @$_POST['kelas'];
 
 $target = 'assets/gambar/user/';
 $nama_gambar = @$_FILES['foto']['name'];
@@ -348,7 +346,7 @@ if ($kode_siswa == "" || $username == "" || $password == "" || $pass == "" || $n
 $pindah = move_uploaded_file($sumber, $target.$nama_gambar);
 if ($pindah)
 {
-	$query = "insert into tb_siswa values ('$kode_siswa','$username','$password','$pass','$nama_lengkap','$jenis_kelamin','$tempat','$tgl_lahir','$anak_ke','$jml_saudara','$agama','$alamat','$asal_sekolah','$nilai_ijazah','$nisn','$nilai1','$nilai2','$nilai3','$nilai4','$nilai5','$keterangan','$siswa','$nama_gambar','$nama_ayah', '$nama_ibu','$alamat_ortu','$no_telp_ortu','$pekerjaan_ayah', '$pekerjaan_ibu', '$nama_wali', '$alamat_wali', '$no_telp_wali', '$pekerjaan_wali', '$no_telp', '$alamat_sekolah')";
+	$query = "insert into tb_siswa values ('$kode_siswa','$username','$password','$pass','$nama_lengkap','$jenis_kelamin','$tempat','$tgl_lahir','$anak_ke','$jml_saudara','$agama','$alamat','$asal_sekolah','$nilai_ijazah','$nisn','$nilai1','$nilai2','$nilai3','$nilai4','$nilai5','$keterangan','$siswa','$nama_gambar','$nama_ayah', '$nama_ibu','$alamat_ortu','$no_telp_ortu','$pekerjaan_ayah', '$pekerjaan_ibu', '$nama_wali', '$alamat_wali', '$no_telp_wali', '$pekerjaan_wali', '$no_telp', '$alamat_sekolah', '$kelas')";
 	$result = mysqli_query($con,$query);
 	// var_dump($query);
 	// var_dump($result);

@@ -102,8 +102,8 @@ $data = mysqli_fetch_array($sql_formulir);
 				<ul class="children collapse" id="sub-item-1">
 					<li><a class="" href="?page=admin&action=agama">
 						<span class="glyphicon glyphicon-list-alt" style="font-size: 23px;">&nbsp;</span> Data Agama					</a></li>
-						<li><a class="" href="?page=admin&action=formulir">
-						<span class="glyphicon glyphicon-list-alt" style="font-size: 23px;">&nbsp;</span> Formulir Pendaftaran </a></li>				
+						<!-- <li><a class="" href="?page=admin&action=formulir"> -->
+						<!-- <span class="glyphicon glyphicon-list-alt" style="font-size: 23px;">&nbsp;</span> Formulir Pendaftaran </a></li>				 -->
 				</ul>
 			</li>
 
