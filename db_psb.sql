@@ -11,11 +11,27 @@
  Target Server Version : 50724
  File Encoding         : 65001
 
- Date: 26/12/2020 19:57:23
+ Date: 27/12/2020 15:55:07
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for tb_admins
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_admins`;
+CREATE TABLE `tb_admins`  (
+  `id` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `dana_pengembangan` int(11) NOT NULL,
+  `dana_tahunan` int(11) NOT NULL,
+  `spp` int(11) NOT NULL,
+  `katering` int(11) NOT NULL,
+  `tabungan_wisata` int(11) NOT NULL,
+  `angsuran` int(11) NOT NULL,
+  `tanggal_angsuran` date NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for tb_agama
@@ -26,15 +42,6 @@ CREATE TABLE `tb_agama`  (
   `nama_agama` varchar(30) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   PRIMARY KEY (`kode_agama`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of tb_agama
--- ----------------------------
-INSERT INTO `tb_agama` VALUES ('A001', 'ISLAM');
-INSERT INTO `tb_agama` VALUES ('A002', 'KRISTEN');
-INSERT INTO `tb_agama` VALUES ('A003', 'HINDU');
-INSERT INTO `tb_agama` VALUES ('A004', 'BUDHA');
-INSERT INTO `tb_agama` VALUES ('A005', 'Katolik');
 
 -- ----------------------------
 -- Table structure for tb_siswa
@@ -77,13 +84,11 @@ CREATE TABLE `tb_siswa`  (
   `no_telp` varchar(15) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `alamat_sekolah` varchar(150) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `kelas` varchar(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  PRIMARY KEY (`kode_siswa`) USING BTREE
+  `admins` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  PRIMARY KEY (`kode_siswa`) USING BTREE,
+  INDEX `admins_fk`(`admins`) USING BTREE,
+  CONSTRAINT `admins_fk` FOREIGN KEY (`admins`) REFERENCES `tb_admins` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of tb_siswa
--- ----------------------------
-INSERT INTO `tb_siswa` VALUES ('S027', 'kopet', '827ccb0eea8a706c4c34a16891f84e7b', '12345', 'ancen', 'Laki-laki', 'antah', '2020-12-16', 1, 1, 'Islam', '   asffasgagadasasfas   ', 'alas asasal', 0, '42412412', 10, 0, 20, 30, 0, 'TIDAK DITERIMA', 'siswa', 'CCC_2019-10-26_09-58-31_3.png', 'ayajashdakjsd', 'dsafkjasfgkjg', 'dddafdssgsd', '102930129048', 'hhhyyyr', 'vbvbvbvbv', '', '', '', '', '88654634', 'asal asalan', 'ICT');
 
 -- ----------------------------
 -- Table structure for tb_user
@@ -99,10 +104,5 @@ CREATE TABLE `tb_user`  (
   `gambar` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   PRIMARY KEY (`kode_user`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of tb_user
--- ----------------------------
-INSERT INTO `tb_user` VALUES ('U001', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', 'Abdul yamin', 'admin', 'images.jpg');
 
 SET FOREIGN_KEY_CHECKS = 1;
