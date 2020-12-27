@@ -64,6 +64,16 @@ $data = mysqli_fetch_array($sql_formulir);
 		</tr>
 		</tr>
 			<tr>
+			<td>No Telepon</td>
+			<td><?php echo $data['no_telp']; ?></td>
+		</tr>
+		</tr>
+			<tr>
+			<td>Kelas</td>
+			<td><?php echo $data['kelas']; ?></td>
+		</tr>
+		</tr>
+			<tr>
 			<td>Agama</td>
 			<td><?php echo $data['agama']; ?></td>
 		</tr>
@@ -72,6 +82,62 @@ $data = mysqli_fetch_array($sql_formulir);
 			<td>Alamat</td>
 			<td><?php echo $data['alamat']; ?></td>
 					
+		</tr>
+	</tbody>
+	<thead>
+		<tr style="color: dodgerblue;">
+			<th>Orangtua/wali</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Nama ayah</td>
+			<td><?php echo $data['nama_ayah']; ?></td>
+		</tr>
+		<tr>
+			<td>Pekerjaan ayah</td>
+			<td><?php echo $data['pekerjaan_ayah']; ?></td>
+		</tr>
+		<tr>
+			<td>Nama ibu</td>
+			<td><?php echo $data['nama_ibu']; ?></td>
+		</tr>
+		<tr>
+			<td>Pekerjaan ibu</td>
+			<td><?php echo $data['pekerjaan_ibu']; ?></td>
+		</tr>
+		<tr>
+			<td>No Telepon</td>
+			<td><?php echo $data['no_telp_ortu']; ?></td>
+		</tr>
+		<tr>
+			<td>Alamat</td>
+			<td><?php echo $data['alamat_ortu']; ?></td>
+		</tr>
+	</tbody>
+	<thead>
+		<tr style="color: dodgerblue;">
+			<th>Wali</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Nama walis</td>
+			<td><?php echo $data['nama_wali']; ?></td>
+		</tr>
+		<tr>
+			<td>Pekerjaan wali</td>
+			<td><?php echo $data['pekerjaan_wali']; ?></td>
+		</tr>
+		<tr>
+			<td>No Telepon</td>
+			<td><?php echo $data['no_telp_wali']; ?></td>
+		</tr>
+		<tr>
+			<td>Alamat</td>
+			<td><?php echo $data['alamat_wali']; ?></td>
 		</tr>
 	</tbody>
 	<thead>
@@ -88,7 +154,10 @@ $data = mysqli_fetch_array($sql_formulir);
 		<tr>
 			<td>Nilai STTB/Ijazah</td>
 			<td><?php echo $data['nilai_ijazah']; ?></td>
-					
+		</tr>
+		<tr>
+			<td>Alamat sekolah</td>
+			<td><?php echo $data['alamat_sekolah']; ?></td>
 		</tr>
 	</tbody>
 	<thead>

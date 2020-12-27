@@ -198,6 +198,23 @@ if ($page=="siswa") {
 	<script type="text/javascript">
 	$(document).ready(function(){
 		$('#data').DataTable();
+		
+		if ($('#ortu-radio').is(':checked')) {
+			$('.wali-section').hide();
+		}else{
+			$('.ortu-section').hide();
+		}
+
+		$('input[type=radio][name=ortu]').change(function() {
+			if (this.value == 'orangtua') {
+				$('.wali-section').hide();
+				$('.ortu-section').show();
+			}
+			else if (this.value == 'wali') {
+				$('.ortu-section').hide();
+				$('.wali-section').show();
+			}
+		});
 	});
 </script>
 	<script type="text/javascript">

@@ -87,7 +87,8 @@ $data = mysqli_fetch_array($sql);
 					<div class="form-group">
 						<label class="col-md-3 control-label" for="name">No Telepon</label>
 						<div class="col-md-9">
-							<input id="no_telepon" name="no_telepon" type="number" class="form-control" value="<?php echo $data['no_telp'];?>">
+							<input id="no_telepon" name="no_telepon" type="number" class="form-control"
+								value="<?php echo $data['no_telp'];?>">
 						</div>
 					</div>
 					<div class="form-group">
@@ -128,67 +129,89 @@ $data = mysqli_fetch_array($sql);
 							<span class="label label-info" style="font-size: 16px;">Orangtua/wali</span>
 						</div>
 					</div>
-					
+
 					<div class="form-group">
-						<label class="col-md-3 control-label" for="name">Nama Ayah</label>
+						<label class="col-md-3 control-label" for="name">Orang tua</label>
 						<div class="col-md-9">
-							<input id="nama_ayah" name="nama_ayah" type="text" class="form-control" value="<?php echo $data['nama_ayah'];?>">
+							<input id="ortu-sec" name="ortu-sec" type="radio" class="form-control"
+								value="">
 						</div>
 					</div>
-					<div class="form-group">
-						<label class="col-md-3 control-label" for="name">Nama Ibu</label>
-						<div class="col-md-9">
-							<input id="nama_ibu" name="nama_ibu" type="text" class="form-control" value="<?php echo $data['nama_ibu'];?>">
+
+					<div class="ortu-section">
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="name">Nama Ayah</label>
+							<div class="col-md-9">
+								<input id="nama_ayah" name="nama_ayah" type="text" class="form-control"
+									value="<?php echo $data['nama_ayah'];?>">
+							</div>
 						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-md-3 control-label" for="name">No Telepon</label>
-						<div class="col-md-9">
-							<input id="no_telportu" name="no_telportu" type="number" class="form-control" value="<?php echo $data['no_telp_ortu'];?>">
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="name">Nama Ibu</label>
+							<div class="col-md-9">
+								<input id="nama_ibu" name="nama_ibu" type="text" class="form-control"
+									value="<?php echo $data['nama_ibu'];?>">
+							</div>
 						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-md-3 control-label" for="name">Pekerjaan Ayah</label>
-						<div class="col-md-9">
-							<input id="pekerjaan_ayah" name="pekerjaan_ayah" type="text" class="form-control" value="<?php echo $data['pekerjaan_ayah'];?>">
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="name">No Telepon</label>
+							<div class="col-md-9">
+								<input id="no_telportu" name="no_telportu" type="number" class="form-control"
+									value="<?php echo $data['no_telp_ortu'];?>">
+							</div>
 						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-md-3 control-label" for="name">Pekerjaan Ibu</label>
-						<div class="col-md-9">
-							<input id="pekerjaan_ibu" name="pekerjaan_ibu" type="text" class="form-control" value="<?php echo $data['pekerjaan_ibu'];?>">
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="name">Pekerjaan Ayah</label>
+							<div class="col-md-9">
+								<input id="pekerjaan_ayah" name="pekerjaan_ayah" type="text" class="form-control"
+									value="<?php echo $data['pekerjaan_ayah'];?>">
+							</div>
 						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-md-3 control-label" for="name">Alamat</label>
-						<div class="col-md-9">
-							<textarea name="alamat_ortu" class="form-control" rows="3"><?php echo $data['alamat_ortu'];?></textarea>
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="name">Pekerjaan Ibu</label>
+							<div class="col-md-9">
+								<input id="pekerjaan_ibu" name="pekerjaan_ibu" type="text" class="form-control"
+									value="<?php echo $data['pekerjaan_ibu'];?>">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="name">Alamat</label>
+							<div class="col-md-9">
+								<textarea name="alamat_ortu" class="form-control"
+									rows="3"><?php echo $data['alamat_ortu'];?></textarea>
+							</div>
 						</div>
 					</div>
 
 					<!-- WALI SECTION -->
-					<div class="form-group">
-						<label class="col-md-3 control-label" for="name">Nama Wali</label>
-						<div class="col-md-9">
-							<input id="nama_wali" name="nama_wali" type="text" class="form-control" value="<?php echo $data['nama_wali'];?>">
+					<div class="wali-section">
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="name">Nama Wali</label>
+							<div class="col-md-9">
+								<input id="nama_wali" name="nama_wali" type="text" class="form-control"
+									value="<?php echo $data['nama_wali'];?>">
+							</div>
 						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-md-3 control-label" for="name">No Telepon Wali</label>
-						<div class="col-md-9">
-							<input id="no_telpwali" name="no_telpwali" type="number" class="form-control" value="<?php echo $data['no_telp_wali'];?>">
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="name">No Telepon Wali</label>
+							<div class="col-md-9">
+								<input id="no_telpwali" name="no_telpwali" type="number" class="form-control"
+									value="<?php echo $data['no_telp_wali'];?>">
+							</div>
 						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-md-3 control-label" for="name">Pekerjaan Wali</label>
-						<div class="col-md-9">
-							<input id="pekerjaan_wali" name="pekerjaan_wali" type="text" class="form-control" value="<?php echo $data['pekerjaan_wali'];?>">
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="name">Pekerjaan Wali</label>
+							<div class="col-md-9">
+								<input id="pekerjaan_wali" name="pekerjaan_wali" type="text" class="form-control"
+									value="<?php echo $data['pekerjaan_wali'];?>">
+							</div>
 						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-md-3 control-label" for="name">Alamat Wali</label>
-						<div class="col-md-9">
-							<textarea name="alamat_wali" class="form-control" rows="3"><?php echo $data['alamat_wali'];?></textarea>
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="name">Alamat Wali</label>
+							<div class="col-md-9">
+								<textarea name="alamat_wali" class="form-control"
+									rows="3"><?php echo $data['alamat_wali'];?></textarea>
+							</div>
 						</div>
 					</div>
 					<!-- END WALI SECTION -->
@@ -247,14 +270,15 @@ $data = mysqli_fetch_array($sql);
 					<div class="form-group">
 						<label class="col-md-3 control-label" for="name">Alamat Sekolah</label>
 						<div class="col-md-9">
-							<textarea name="alamat_sekolah" class="form-control" rows="3"><?php echo $data['alamat_sekolah'];?></textarea>
+							<textarea name="alamat_sekolah" class="form-control"
+								rows="3"><?php echo $data['alamat_sekolah'];?></textarea>
 						</div>
 					</div>
 					<!-- </div> -->
 					<div class="row" id="space-row">
 						<span class="label label-info" style="font-size: 16px;">NILAI UJIAN AKHIR NASIONAL SD</span>
 					</div>
-					
+
 				</div>
 				<div class="col-md-6">
 					<table class="table table-striped">
@@ -351,10 +375,10 @@ $result = mysqli_query($con,$query);
 ?>
 
 		<script type="text/javascript">
-	alert(" Suskse !! Data berhasil di perbaharui !! ")
+			alert(" Suskse !! Data berhasil di perbaharui !! ")
 
-window.location.href="?page=admin&action=lihat";     
-</script>
+			window.location.href = "?page=admin&action=lihat";
+		</script>
 		<?php 
 }?>
 

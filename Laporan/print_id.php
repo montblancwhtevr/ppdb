@@ -106,6 +106,62 @@ $data = mysqli_fetch_array($sql);
 	</tbody>
 	<thead>
 		<tr style="color: dodgerblue;">
+			<th>Orangtua/wali</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Nama ayah</td>
+			<td><?php echo $data['nama_ayah']; ?></td>
+		</tr>
+		<tr>
+			<td>Pekerjaan ayah</td>
+			<td><?php echo $data['pekerjaan_ayah']; ?></td>
+		</tr>
+		<tr>
+			<td>Nama ibu</td>
+			<td><?php echo $data['nama_ibu']; ?></td>
+		</tr>
+		<tr>
+			<td>Pekerjaan ibu</td>
+			<td><?php echo $data['pekerjaan_ibu']; ?></td>
+		</tr>
+		<tr>
+			<td>No Telepon</td>
+			<td><?php echo $data['no_telp_ortu']; ?></td>
+		</tr>
+		<tr>
+			<td>Alamat</td>
+			<td><?php echo $data['alamat_ortu']; ?></td>
+		</tr>
+	</tbody>
+	<thead>
+		<tr style="color: dodgerblue;">
+			<th>Wali</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Nama wali</td>
+			<td><?php echo $data['nama_wali']; ?></td>
+		</tr>
+		<tr>
+			<td>Pekerjaan wali</td>
+			<td><?php echo $data['pekerjaan_wali']; ?></td>
+		</tr>
+		<tr>
+			<td>No Telepon</td>
+			<td><?php echo $data['no_telp_wali']; ?></td>
+		</tr>
+		<tr>
+			<td>Alamat</td>
+			<td><?php echo $data['alamat_wali']; ?></td>
+		</tr>
+	</tbody>
+	<thead>
+		<tr style="color: dodgerblue;">
 			<th>SEKOLAH/MADRASAH</th>
 			<th></th>
 		</tr>
