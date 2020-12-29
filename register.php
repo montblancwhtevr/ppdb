@@ -140,17 +140,35 @@ if ($pindah) {
     '',
     '',
     '',
-    'Reguler'
+    'Reguler',
+    '$kode_siswa'
   )";
+  $dateNow = date("Y/m/d");
+  $queryAdmins = "INSERT INTO tb_admins VALUES
+	(
+		'$kode_siswa',
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		'$dateNow'
+	)";
+  $result2 = mysqli_query($con,$queryAdmins);
   $result = mysqli_query($con,$query);
   var_dump($query);
   var_dump($result);
   echo("Error description: " . mysqli_error($con));
+  echo "<br><br>";
+  var_dump($queryAdmins);
+  var_dump($result2);
+  echo("Error description: " . mysqli_error($con));
    ?>
 
          <script type="text/javascript">
-          alert(" Sukses ! Berhasil Mendaftar.. SILAHKAN LOGIN !!"); 
-          window.location.href="?page=login";     
+          // alert(" Sukses ! Berhasil Mendaftar.. SILAHKAN LOGIN !!"); 
+          // window.location.href="?page=login";     
          </script>
          <?php
 

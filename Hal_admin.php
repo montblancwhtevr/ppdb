@@ -222,6 +222,23 @@ if ($page=="admin") {
 		<script type="text/javascript">
 	$(document).ready(function(){
 		$('#data').DataTable();
+		var max_fields      = 4; //maximum input boxes allowed
+		var wrapper         = $(".adminPops"); //Fields wrapper
+		var add_button      = $("#addField"); //Add button ID
+
+		var x = 1; //initlal text box count
+		$(add_button).click(function(e){ //on add input button click
+			e.preventDefault();
+			if(x < max_fields){ //max input box allowed
+				x++; //text box increment
+				$(wrapper).append('<div class="row flexs" style="margin-bottom:12px;"><div class="col-md-5"><input id="angsuran" name="angsuran[]" type="text" class="form-control" placeholder="Angsuran(Rp)"></div><div class="col-md-5"><input id="tanggal_angsuran" name="tanggal_angsuran[]" type="date" class="form-control"></div><button class="btn btn-warning removeField" > - </button></div> '); //add input box
+			}
+		});
+
+		$(wrapper).on("click",".removeField", function(e){ //user click on remove text
+			e.preventDefault(); $(this).parent('div').remove(); x--;
+		})
+		
 	});
 </script>
 	
