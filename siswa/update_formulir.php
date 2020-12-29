@@ -12,13 +12,13 @@
 		</div>
 		<br> <br>
 		<?php
-if (@$_SESSION['siswa']) {
-$sesi = @$_SESSION['siswa'];
-}
+		if (@$_SESSION['siswa']) {
+			$sesi = @$_SESSION['siswa'];
+		}
 
-$sql_formulir = mysqli_query($con,"select * from tb_siswa where kode_siswa = '$sesi'");
-$data = mysqli_fetch_array($sql_formulir);
-?>
+		$sql_formulir = mysqli_query($con, "select * from tb_siswa where kode_siswa = '$sesi'");
+		$data = mysqli_fetch_array($sql_formulir);
+		?>
 		<form class="form-horizontal" action="" method="post">
 			<fieldset>
 				<!-- Name input-->
@@ -26,15 +26,13 @@ $data = mysqli_fetch_array($sql_formulir);
 					<div class="form-group">
 						<label class="col-md-3 control-label" for="name">Kode Siswa</label>
 						<div class="col-md-9">
-							<input id="name" value="<?php echo $data ['kode_siswa']; ?>" name="kode_siwa" type="text"
-								class="form-control">
+							<input id="name" value="<?php echo $data['kode_siswa']; ?>" name="kode_siwa" type="text" class="form-control">
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-md-3 control-label" for="name">Nama Siswa</label>
 						<div class="col-md-9">
-							<input id="name" name="nama_lengkap" type="text" placeholder="Your name"
-								class="form-control" value="<?php echo $data ['nama_lengkap']; ?>">
+							<input id="name" name="nama_lengkap" type="text" placeholder="Your name" class="form-control" value="<?php echo $data['nama_lengkap']; ?>">
 						</div>
 					</div>
 					<div class="form-group">
@@ -42,12 +40,14 @@ $data = mysqli_fetch_array($sql_formulir);
 						<div class="col-md-9">
 							<div class="radio">
 								<label>
-									<input type="radio" name="jenis_kelamin" id="optionsRadios1" value="Laki-laki"
-										<?php if ($data['jenis_kelamin'] == 'Laki-laki') {echo "checked";} ?>> Laki-laki
+									<input type="radio" name="jenis_kelamin" id="optionsRadios1" value="Laki-laki" <?php if ($data['jenis_kelamin'] == 'Laki-laki') {
+																														echo "checked";
+																													} ?>> Laki-laki
 								</label>
 								<label>
-									<input type="radio" name="jenis_kelamin" id="optionsRadios1" value="Perempuan"
-										<?php if ($data['jenis_kelamin'] == 'Perempuan') {echo "checked";} ?>> Perempuan
+									<input type="radio" name="jenis_kelamin" id="optionsRadios1" value="Perempuan" <?php if ($data['jenis_kelamin'] == 'Perempuan') {
+																														echo "checked";
+																													} ?>> Perempuan
 								</label>
 							</div>
 						</div>
@@ -55,47 +55,48 @@ $data = mysqli_fetch_array($sql_formulir);
 					<div class="form-group">
 						<label class="col-md-3 control-label" for="name">Tempat Lahir</label>
 						<div class="col-md-9">
-							<input id="name" name="tempat" type="text" class="form-control"
-								value="<?php echo $data ['tempat']; ?>">
+							<input id="name" name="tempat" type="text" class="form-control" value="<?php echo $data['tempat']; ?>">
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-md-3 control-label" for="name">Tanggal Lahir</label>
 						<div class="col-md-9">
-							<input id="name" name="tgl_lahir" type="date" class="form-control"
-								value="<?php echo $data ['tgl_lahir']; ?>">
+							<input id="name" name="tgl_lahir" type="date" class="form-control" value="<?php echo $data['tgl_lahir']; ?>">
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-md-3 control-label" for="name">Anak Ke</label>
 						<div class="col-md-9">
-							<input id="name" name="anak_ke" type="number" class="form-control"
-								value="<?php echo $data ['anak_ke']; ?>">
+							<input id="name" name="anak_ke" type="number" class="form-control" value="<?php echo $data['anak_ke']; ?>">
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-md-3 control-label" for="name">Jumlah Saudara</label>
 						<div class="col-md-9">
-							<input id="name" name="jml_saudara" type="number" class="form-control"
-								value="<?php echo $data ['jml_saudara']; ?>">
+							<input id="name" name="jml_saudara" type="number" class="form-control" value="<?php echo $data['jml_saudara']; ?>">
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-md-3 control-label" for="name">No Telepon</label>
 						<div class="col-md-9">
-							<input id="no_telepon" name="no_telepon" type="number" class="form-control"
-								value="<?php echo $data['no_telp'];?>">
+							<input id="no_telepon" name="no_telepon" type="number" class="form-control" value="<?php echo $data['no_telp']; ?>">
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-md-3 control-label" for="name">Kelas</label>
 						<div class="col-md-7">
 							<select name="kelas" class="form-control">
-								<option value="" <?php if($data['kelas'] == ''){echo 'selected';} ?>>-- Pilih Kelas --
+								<option value="" <?php if ($data['kelas'] == '') {
+														echo 'selected';
+													} ?>>-- Pilih Kelas --
 								</option>
-								<option value="Reguler" <?php if($data['kelas'] == 'Reguler'){echo 'selected';} ?>>
+								<option value="Reguler" <?php if ($data['kelas'] == 'Reguler') {
+															echo 'selected';
+														} ?>>
 									Reguler</option>
-								<option value="ICT" <?php if($data['kelas'] == 'ICT'){echo 'selected';} ?>>ICT</option>
+								<option value="ICT" <?php if ($data['kelas'] == 'ICT') {
+														echo 'selected';
+													} ?>>ICT</option>
 							</select>
 
 						</div>
@@ -116,8 +117,7 @@ $data = mysqli_fetch_array($sql_formulir);
 					<div class="form-group">
 						<label class="col-md-3 control-label" for="name">Alamat</label>
 						<div class="col-md-9">
-							<textarea name="alamat" class="form-control"
-								rows="3"><?php echo $data['alamat']; ?></textarea>
+							<textarea name="alamat" class="form-control" rows="3"><?php echo $data['alamat']; ?></textarea>
 						</div>
 					</div>
 					<div class="row" style="margin-bottom: 14px;">
@@ -135,7 +135,7 @@ $data = mysqli_fetch_array($sql_formulir);
 						</p>
 						<p>
 							<label>
-								<input name="ortu" id="wali-radio"  type="radio" value="wali" />
+								<input name="ortu" id="wali-radio" type="radio" value="wali" />
 								<span>Wali</span>
 							</label>
 						</p>
@@ -145,43 +145,37 @@ $data = mysqli_fetch_array($sql_formulir);
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="name">Nama Ayah</label>
 							<div class="col-md-9">
-								<input id="nama_ayah" name="nama_ayah" type="text" class="form-control"
-									value="<?php echo $data['nama_ayah'];?>">
+								<input id="nama_ayah" name="nama_ayah" type="text" class="form-control" value="<?php echo $data['nama_ayah']; ?>">
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="name">Nama Ibu</label>
 							<div class="col-md-9">
-								<input id="nama_ibu" name="nama_ibu" type="text" class="form-control"
-									value="<?php echo $data['nama_ibu'];?>">
+								<input id="nama_ibu" name="nama_ibu" type="text" class="form-control" value="<?php echo $data['nama_ibu']; ?>">
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="name">No Telepon</label>
 							<div class="col-md-9">
-								<input id="no_telportu" name="no_telportu" type="number" class="form-control"
-									value="<?php echo $data['no_telp_ortu'];?>">
+								<input id="no_telportu" name="no_telportu" type="number" class="form-control" value="<?php echo $data['no_telp_ortu']; ?>">
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="name">Pekerjaan Ayah</label>
 							<div class="col-md-9">
-								<input id="pekerjaan_ayah" name="pekerjaan_ayah" type="text" class="form-control"
-									value="<?php echo $data['pekerjaan_ayah'];?>">
+								<input id="pekerjaan_ayah" name="pekerjaan_ayah" type="text" class="form-control" value="<?php echo $data['pekerjaan_ayah']; ?>">
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="name">Pekerjaan Ibu</label>
 							<div class="col-md-9">
-								<input id="pekerjaan_ibu" name="pekerjaan_ibu" type="text" class="form-control"
-									value="<?php echo $data['pekerjaan_ibu'];?>">
+								<input id="pekerjaan_ibu" name="pekerjaan_ibu" type="text" class="form-control" value="<?php echo $data['pekerjaan_ibu']; ?>">
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="name">Alamat</label>
 							<div class="col-md-9">
-								<textarea name="alamat_ortu" class="form-control"
-									rows="3"><?php echo $data['alamat_ortu'];?></textarea>
+								<textarea name="alamat_ortu" class="form-control" rows="3"><?php echo $data['alamat_ortu']; ?></textarea>
 							</div>
 						</div>
 					</div>
@@ -191,29 +185,25 @@ $data = mysqli_fetch_array($sql_formulir);
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="name">Nama Wali</label>
 							<div class="col-md-9">
-								<input id="nama_wali" name="nama_wali" type="text" class="form-control"
-									value="<?php echo $data['nama_wali'];?>">
+								<input id="nama_wali" name="nama_wali" type="text" class="form-control" value="<?php echo $data['nama_wali']; ?>">
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="name">No Telepon Wali</label>
 							<div class="col-md-9">
-								<input id="no_telpwali" name="no_telpwali" type="number" class="form-control"
-									value="<?php echo $data['no_telp_wali'];?>">
+								<input id="no_telpwali" name="no_telpwali" type="number" class="form-control" value="<?php echo $data['no_telp_wali']; ?>">
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="name">Pekerjaan Wali</label>
 							<div class="col-md-9">
-								<input id="pekerjaan_wali" name="pekerjaan_wali" type="text" class="form-control"
-									value="<?php echo $data['pekerjaan_wali'];?>">
+								<input id="pekerjaan_wali" name="pekerjaan_wali" type="text" class="form-control" value="<?php echo $data['pekerjaan_wali']; ?>">
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="name">Alamat Wali</label>
 							<div class="col-md-9">
-								<textarea name="alamat_wali" class="form-control"
-									rows="3"><?php echo $data['alamat_wali'];?></textarea>
+								<textarea name="alamat_wali" class="form-control" rows="3"><?php echo $data['alamat_wali']; ?></textarea>
 							</div>
 						</div>
 					</div>
@@ -224,15 +214,13 @@ $data = mysqli_fetch_array($sql_formulir);
 					<div class="form-group">
 						<label class="col-md-3 control-label" for="email"> Username</label>
 						<div class="col-md-9">
-							<input id="email" name="username" type="text" value="<?php echo $data ['username']; ?>"
-								class="form-control" disabled>
+							<input id="email" name="username" type="text" value="<?php echo $data['username']; ?>" class="form-control" disabled>
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-md-3 control-label" for="email"> Password</label>
 						<div class="col-md-9">
-							<input id="email" name="pass" type="text" value="<?php echo $data ['pass']; ?>"
-								class="form-control">
+							<input id="email" name="pass" type="text" value="<?php echo $data['pass']; ?>" class="form-control">
 						</div>
 					</div>
 
@@ -247,29 +235,25 @@ $data = mysqli_fetch_array($sql_formulir);
 					<div class="form-group">
 						<label class="col-md-3 control-label" for="email"> Asal Sekolah</label>
 						<div class="col-md-9">
-							<input id="email" name="asal_sekolah" type="text" placeholder="Asal Sekolah : SMP/MTS"
-								value="<?php echo $data ['asal_sekolah']; ?>" class="form-control">
+							<input id="email" name="asal_sekolah" type="text" placeholder="Asal Sekolah : SMP/MTS" value="<?php echo $data['asal_sekolah']; ?>" class="form-control">
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-md-3 control-label" for="email">Nilai STTB / Ijazah</label>
 						<div class="col-md-9">
-							<input id="email" name="nilai_ijazah" type="text" class="form-control"
-								value="<?php echo $data ['nilai_ijazah']; ?>">
+							<input id="email" name="nilai_ijazah" type="text" class="form-control" value="<?php echo $data['nilai_ijazah']; ?>">
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-md-3 control-label" for="email">NISN</label>
 						<div class="col-md-9">
-							<input id="email" name="nisn" type="text" class="form-control"
-								value="<?php echo $data ['nisn']; ?>">
+							<input id="email" name="nisn" type="text" class="form-control" value="<?php echo $data['nisn']; ?>">
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-md-3 control-label" for="name">Alamat Sekolah</label>
 						<div class="col-md-9">
-							<textarea name="alamat_sekolah" class="form-control"
-								rows="3"><?php echo $data['alamat_sekolah'];?></textarea>
+							<textarea name="alamat_sekolah" class="form-control" rows="3"><?php echo $data['alamat_sekolah']; ?></textarea>
 						</div>
 					</div>
 				</div>
@@ -291,21 +275,18 @@ $data = mysqli_fetch_array($sql_formulir);
 							<tr>
 								<td>1.</td>
 								<td>Matematika</td>
-								<td> <input type="number" name="nilai1" class="form-control"
-										value="<?php echo $data['nilai1'];?>"> </td>
+								<td> <input type="number" name="nilai1" class="form-control" value="<?php echo $data['nilai1']; ?>"> </td>
 							</tr>
 
 							<tr>
 								<td>3.</td>
 								<td>Bahasa Indonesia</td>
-								<td> <input type="number" name="nilai3" class="form-control"
-										value="<?php echo $data['nilai3'];?>"> </td>
+								<td> <input type="number" name="nilai3" class="form-control" value="<?php echo $data['nilai3']; ?>"> </td>
 							</tr>
 							<tr>
 								<td>4.</td>
 								<td>Ilmu Pengetahuan Alam</td>
-								<td> <input type="number" name="nilai4" class="form-control"
-										value="<?php echo $data['nilai4'];?>"> </td>
+								<td> <input type="number" name="nilai4" class="form-control" value="<?php echo $data['nilai4']; ?>"> </td>
 							</tr>
 
 							<tr class="info">
@@ -329,55 +310,55 @@ $data = mysqli_fetch_array($sql_formulir);
 			</fieldset>
 		</form>
 		<?php
-include 'inc/koneksi.php';
-if (isset($_POST['edit'])) {
-	$pass = $_POST['pass'];
-	$nama_lengkap = $_POST['nama_lengkap'];
-	$jenis_kelamin = $_POST['jenis_kelamin'];
-	$tempat = $_POST['tempat'];
-	$tgl_lahir = $_POST['tgl_lahir'];
-	$anak_ke = $_POST['anak_ke'];
-	$jml_saudara = $_POST['jml_saudara'];
-	$agama = $_POST['agama'];
-	$alamat = $_POST['alamat'];
-	$asal_sekolah = $_POST['asal_sekolah'];
-	$nilai_ijazah = $_POST['nilai_ijazah'];
-	$nisn = $_POST['nisn'];
-	$nilai1 = $_POST['nilai1'];
-	$nilai2 = 0;
-	$nilai3 = $_POST['nilai3'];
-	$nilai4 = $_POST['nilai4'];
-	$nilai5 = 0;
-	$nama_ayah = $_POST['nama_ayah'];
-	$nama_ibu = $_POST['nama_ibu'];
-	$alamat_ortu = $_POST['alamat_ortu'];
-	$no_telp_ortu = $_POST['no_telportu'];
-	$pekerjaan_ayah = $_POST['pekerjaan_ayah'];
-	$pekerjaan_ibu = $_POST['pekerjaan_ibu'];
-	$nama_wali = $_POST['nama_wali'];
-	$alamat_wali = $_POST['alamat_wali'];
-	$no_telp_wali = $_POST['no_telpwali'];
-	$pekerjaan_wali = $_POST['pekerjaan_wali'];
-	$no_telp = $_POST['no_telepon'];
-	$alamat_sekolah = $_POST['alamat_sekolah'];
-	$kelas = $_POST['kelas'];
+		include 'inc/koneksi.php';
+		if (isset($_POST['edit'])) {
+			$pass = $_POST['pass'];
+			$nama_lengkap = $_POST['nama_lengkap'];
+			$jenis_kelamin = $_POST['jenis_kelamin'];
+			$tempat = $_POST['tempat'];
+			$tgl_lahir = $_POST['tgl_lahir'];
+			$anak_ke = $_POST['anak_ke'];
+			$jml_saudara = $_POST['jml_saudara'];
+			$agama = $_POST['agama'];
+			$alamat = $_POST['alamat'];
+			$asal_sekolah = $_POST['asal_sekolah'];
+			$nilai_ijazah = $_POST['nilai_ijazah'];
+			$nisn = $_POST['nisn'];
+			$nilai1 = $_POST['nilai1'];
+			$nilai2 = 0;
+			$nilai3 = $_POST['nilai3'];
+			$nilai4 = $_POST['nilai4'];
+			$nilai5 = 0;
+			$nama_ayah = $_POST['nama_ayah'];
+			$nama_ibu = $_POST['nama_ibu'];
+			$alamat_ortu = $_POST['alamat_ortu'];
+			$no_telp_ortu = $_POST['no_telportu'];
+			$pekerjaan_ayah = $_POST['pekerjaan_ayah'];
+			$pekerjaan_ibu = $_POST['pekerjaan_ibu'];
+			$nama_wali = $_POST['nama_wali'];
+			$alamat_wali = $_POST['alamat_wali'];
+			$no_telp_wali = $_POST['no_telpwali'];
+			$pekerjaan_wali = $_POST['pekerjaan_wali'];
+			$no_telp = $_POST['no_telepon'];
+			$alamat_sekolah = $_POST['alamat_sekolah'];
+			$kelas = $_POST['kelas'];
 
-$query = "UPDATE tb_siswa SET pass='$pass',password =md5('$pass'),nama_lengkap='$nama_lengkap',jenis_kelamin='$jenis_kelamin',tempat='$tempat',tgl_lahir='$tgl_lahir',anak_ke='$anak_ke',jml_saudara='$jml_saudara',agama='$agama',alamat='$alamat',asal_sekolah='$asal_sekolah',nilai_ijazah='$nilai_ijazah',nisn='$nisn',nilai1='$nilai1',nilai2='$nilai2',nilai3='$nilai3',nilai4='$nilai4',nilai5='$nilai5', no_telp='$no_telp', nama_ayah='$nama_ayah', nama_ibu='$nama_ibu', kelas='$kelas', alamat_sekolah='$alamat_sekolah', alamat_ortu='$alamat_ortu', no_telp_ortu='$no_telp_ortu', pekerjaan_ayah='$pekerjaan_ayah', pekerjaan_ibu='$pekerjaan_ibu', nama_wali='$nama_wali', alamat_wali='$alamat_wali', pekerjaan_wali='$pekerjaan_wali', no_telp_wali='$no_telp_wali' WHERE kode_siswa='$sesi'";
-$result = mysqli_query($con, $query);
+			$query = "UPDATE tb_siswa SET pass='$pass',password =md5('$pass'),nama_lengkap='$nama_lengkap',jenis_kelamin='$jenis_kelamin',tempat='$tempat',tgl_lahir='$tgl_lahir',anak_ke='$anak_ke',jml_saudara='$jml_saudara',agama='$agama',alamat='$alamat',asal_sekolah='$asal_sekolah',nilai_ijazah='$nilai_ijazah',nisn='$nisn',nilai1='$nilai1',nilai2='$nilai2',nilai3='$nilai3',nilai4='$nilai4',nilai5='$nilai5', no_telp='$no_telp', nama_ayah='$nama_ayah', nama_ibu='$nama_ibu', kelas='$kelas', alamat_sekolah='$alamat_sekolah', alamat_ortu='$alamat_ortu', no_telp_ortu='$no_telp_ortu', pekerjaan_ayah='$pekerjaan_ayah', pekerjaan_ibu='$pekerjaan_ibu', nama_wali='$nama_wali', alamat_wali='$alamat_wali', pekerjaan_wali='$pekerjaan_wali', no_telp_wali='$no_telp_wali' WHERE kode_siswa='$sesi'";
+			$result = mysqli_query($con, $query);
 
-var_dump($query);
-var_dump($result);
-var_dump(mysqli_error($con));
-if ($result){
-?>
+			// var_dump($query);
+			// var_dump($result);
+			// var_dump(mysqli_error($con));
+			if ($result) {
+		?>
 
-		<script type="text/javascript">
-			// alert(" Suskse !! Data berhasil diperbaharui !! ")
-			// window.location.href = "?page=siswa&action=detail";
-		</script>
-		<?php 
-}
-}?>
+				<script type="text/javascript">
+					alert(" Suskse !! Data berhasil diperbaharui !! ")
+					window.location.href = "?page=siswa&action=detail";
+				</script>
+		<?php
+			}
+		} ?>
 
 	</div>
 </div>
